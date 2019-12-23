@@ -9,7 +9,7 @@ RUN dpkg --add-architecture i386 \
                                                   libstdc++6:i386 \
     && rm -rf /var/lib/apt/lists/*
 
-ENV GEEKBENCHVERSION Geekbench-5.0.4-Linux
+ENV GEEKBENCHVERSION Geekbench-5.1.0-Linux
 ENV GEEKBENCHPACKAGE $GEEKBENCHVERSION.tar.gz
 
 RUN wget --quiet --no-check-certificate http://cdn.geekbench.com/$GEEKBENCHPACKAGE -O /tmp/$GEEKBENCHPACKAGE \
@@ -17,4 +17,4 @@ RUN wget --quiet --no-check-certificate http://cdn.geekbench.com/$GEEKBENCHPACKA
     && tar xzf /tmp/$GEEKBENCHPACKAGE -C /opt/geekbench \
     && rm -rf /tmp/$GEEKBENCHPACKAGE
 
-CMD ["/opt/geekbench/Geekbench-5.0.4-Linux/geekbench5"]
+CMD ["/opt/geekbench/Geekbench-5.1.0-Linux/geekbench5"]
